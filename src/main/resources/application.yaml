@@ -1,0 +1,18 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /api/
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
+    properties:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      temp:
+        use_jdbc_metadata_defaults: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/db
+    username: root
+    password: root
