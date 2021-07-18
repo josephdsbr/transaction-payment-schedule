@@ -27,6 +27,10 @@ public abstract class BaseService<T extends DomainBaseEntity<T>, R extends BaseR
         return repository.findByUuidAndRemovedAtIsNull(uuid);
     }
 
+    public Optional<T> findById(Long id) {
+        return repository.findByIdAndRemovedAtIsNull(id);
+    }
+
     @Transactional
     public T insert(T entity) {
         findEntityByProperty(entity).ifPresent(
