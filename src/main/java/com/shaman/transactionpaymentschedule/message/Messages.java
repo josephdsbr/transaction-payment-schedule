@@ -18,12 +18,17 @@ public class Messages {
     public static final String LOGGER_ERROR = "201#Logger Error.";
     public static final String ENTITY_UUID_SHOULD_BE_NOT_NULL = "202#Entity UUID should not be null.";
     public static final String ENTITY_CANNOT_BE_DELETED_BECAUSE_IT_DOESNT_EXIST_OR_IT_WAS_ALREADY_DELETE = "203#Entity cannot be deleted because it doesn't exist or it was already deleted.";
+    public static final String FIELD_SHOULD_NOT_BE_NULL = "204#Field %s should not be null.";
+    public static final String FIELD_SHOULD_BE_POSITIVE = "205#Field %s should be positive.";
+    public static final String FIELD_MIN_VALUE_CONSTRAINTS = "206#Field %s min value constraints: 1";
+    public static final String FIELD_MAX_VALUE_CONSTRAINTS = "207#Field %s max value constraints: 12";
     /**
      * Integration Messages
      */
 
     public static final String PROVIDER_NOT_FOUND = "501#Provider not found: %s.";
     public static final String PROVIDER_INTEGRATION_ERROR = "502#Provider integration error: %s";
+
 
     public static Integer getCode(String message) {
         return Integer.valueOf(message.substring(0, 3));

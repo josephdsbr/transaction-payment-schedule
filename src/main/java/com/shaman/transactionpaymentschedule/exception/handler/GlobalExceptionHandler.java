@@ -46,8 +46,10 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String, List<ApplicationMessage>> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
-        var messages = ex.getBindingResult().getAllErrors().stream()
-                .map(error -> ApplicationMessage.parse(Objects.requireNonNull(error.getDefaultMessage())))
+        var messages = ex.getBindingResult().getFieldErrors().stream()
+                .map( error -> ApplicationMessage.parse(
+                        String.format(Objects.requireNonNull(error.getDefaultMessage()), error.getField())
+                ))
                 .collect(Collectors.toList());
         return errors(messages);
     }
@@ -119,10 +121,10 @@ public class GlobalExceptionHandler {
         );
     }
 
-    @ExceptionHandler
+    @ExceptionHandler(Exception.class)
     @ResponseBody
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public Map<String, List<ApplicationMessage>> handleException(Exception exception) {
+    public Map<String, List<ApplicationMessage>> handleNotMappedException(Exception exception) {
         return errors(ApplicationMessage.parse(Messages.DEFAULT_ERROR), exception.getMessage());
     }
 
