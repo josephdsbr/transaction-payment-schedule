@@ -1,8 +1,7 @@
 package com.shaman.transactionpaymentschedule.entity;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -10,9 +9,12 @@ import javax.persistence.OneToOne;
 @Getter
 @Setter
 @Entity
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Transaction extends DomainBaseEntity<Transaction> {
-    private Long amount;
+    private Double amount;
     private Long installment;
     @OneToOne
     private Client client;

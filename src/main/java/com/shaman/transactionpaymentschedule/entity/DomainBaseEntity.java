@@ -14,10 +14,6 @@ import javax.persistence.MappedSuperclass;
 @SuperBuilder
 @NoArgsConstructor
 @MappedSuperclass
-@TypeDef(
-        name = "list-array",
-        typeClass = ListArrayType.class
-)
 public abstract class DomainBaseEntity<T> extends BaseEntity {
     public abstract void setUpdatableFields(T entity);
 }
