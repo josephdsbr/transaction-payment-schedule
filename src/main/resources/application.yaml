@@ -4,7 +4,7 @@ server:
     context-path: /api/
 spring:
   jpa:
-    generate-ddl: true
+    generate-ddl: false
     hibernate:
       naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
     properties:
@@ -17,4 +17,3 @@ spring:
     url: ${JDBC_DATABASE_URL}
     username: ${JDBC_DATABASE_USERNAME}
     password: ${JDBC_DATABASE_PASSWORD}
-    initialization-mode: always
