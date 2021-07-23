@@ -1,9 +1,7 @@
 package com.shaman.transactionpaymentschedule.entity;
 
 import com.vladmihalcea.hibernate.type.array.ListArrayType;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
@@ -17,6 +15,8 @@ import java.util.List;
 @Setter
 @Entity
 @SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @TypeDef(
         name = "list-array",
