@@ -13,6 +13,6 @@ spring:
         use_jdbc_metadata_defaults: false
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/db
-    username: root
-    password: root
+    url: jdbc:postgresql://batyr.db.elephantsql.com:5432/jtcwbayz
+    username: jtcwbayz
+    password: EwltmzGXY6B78fplwI_HX4ORQOTieN_e
