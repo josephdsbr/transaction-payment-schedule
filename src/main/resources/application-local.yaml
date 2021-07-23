@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://batyr.db.elephantsql.com:5432/jtcwbayz
+    username: jtcwbayz
+    password: EwltmzGXY6B78fplwI_HX4ORQOTieN_e
+

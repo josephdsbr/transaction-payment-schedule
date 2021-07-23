@@ -23,8 +23,10 @@ public abstract class BaseService<T extends DomainBaseEntity<T>, R extends BaseR
         return repository.findAllByRemovedAtIsNull();
     }
 
-    public Optional<T> findByUid(UUID uuid) {
-        return repository.findByUuidAndRemovedAtIsNull(uuid);
+    public T findByUid(UUID uuid) {
+        return repository.findByUuidAndRemovedAtIsNull(uuid).orElseThrow(() -> new ApplicationException(
+                String.format(Messages.ENTITY_NOT_FOUND, getEntityName())
+        ));
     }
 
     public Optional<T> findById(Long id) {

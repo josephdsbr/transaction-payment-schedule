@@ -39,10 +39,7 @@ public class TransactionService extends BaseService<Transaction, TransactionRepo
     }
 
     public Transaction persist(TransactionDetails transactionDetails) {
-        var client = this.clientService.findById(transactionDetails.getClientId()).orElseThrow(
-                () -> new ApplicationException(
-                        String.format(Messages.ENTITY_NOT_FOUND, Client.class)
-                ));
+        var client = this.clientService.findByUid(transactionDetails.getClientId());
         var transaction = TransactionDetailsBuilder.toEntity(transactionDetails, client);
         return this.insert(transaction);
     }

@@ -22,12 +22,14 @@ public class Messages {
     public static final String FIELD_SHOULD_BE_POSITIVE = "205#Field %s should be positive.";
     public static final String FIELD_MIN_VALUE_CONSTRAINTS = "206#Field %s min value constraints: 1";
     public static final String FIELD_MAX_VALUE_CONSTRAINTS = "207#Field %s max value constraints: 12";
+    public static final String FIELD_SHOULD_NOT_BE_EMPTY = "208#Field %s should not be empty.";
     /**
      * Integration Messages
      */
 
     public static final String PROVIDER_NOT_FOUND = "501#Provider not found: %s.";
     public static final String PROVIDER_INTEGRATION_ERROR = "502#Provider integration error: %s";
+
 
 
     public static Integer getCode(String message) {

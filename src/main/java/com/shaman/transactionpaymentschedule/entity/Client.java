@@ -3,6 +3,7 @@ package com.shaman.transactionpaymentschedule.entity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
@@ -15,7 +16,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Client extends DomainBaseEntity<Client> {
     private String name;
-    @OneToOne
+    @OneToOne(cascade= CascadeType.ALL)
     private Plan plan;
 
     @Override
